@@ -82,7 +82,7 @@
         <text variable="container-title" font-style="italic"/>
       </if>
       <else-if type="article-journal article-magazine article-newspaper" match="any">
-        <text variable="container-title" form="short"/>
+        <text variable="container-title" form="long"/><!--不要缩写期刊名 long or short-->
       </else-if>
       <else-if type="report">
         <text variable="collection-title" font-style="italic" form="short"/>
@@ -101,8 +101,8 @@
         <choose>
           <if variable="volume">
             <group prefix="">
-              <group suffix=": ">
-               <text variable="volume" prefix="(" suffix=")"/>
+              <group suffix=", ">
+               <text variable="volume" prefix=", " suffix=""/>
                 <text variable="issue" prefix="(" suffix=")"/>
               </group>
               <text variable="page"/>
@@ -175,8 +175,10 @@
         </group>
       </else-if>
       <else-if type="article-journal">
-        <text macro="container-booklike"/>
-        <text macro="locator"/>
+        <group delimiter="">
+          <text macro="container-booklike"/>
+          <text macro="locator"/>
+        </group>
       </else-if>
       <else-if type="article-magazine article-newspaper" match="any">
         <group delimiter=", ">
