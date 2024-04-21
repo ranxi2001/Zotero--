@@ -208,6 +208,7 @@
             <text variable="number" font-style="italic"/>
             <text variable="publisher"/>
             <text variable="publisher-place"/>
+            <text variable="URL" form="long"/>
           </group>
         </group>
       </else-if>
