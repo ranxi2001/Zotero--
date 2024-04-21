@@ -63,7 +63,7 @@
       </if>
       <else-if type="book">
         <group delimiter=", ">
-          <text variable="title" font-style="italic"/>
+          <text variable="title"/><!--书籍也不需要斜体-->
           <group>
             <label variable="volume" form="short" suffix=" " text-case="capitalize-first"/>
             <text variable="volume"/>
